@@ -40,13 +40,13 @@ jobs:
       language: shell
       install:
         - choco install maven --version=3.6.3 --verbose
-#        - export PATH="/c/ProgramData/chocolatey/lib/maven/apache-maven-3.6.3/bin:$PATH"
-#        - export PATH="/c/ProgramData/chocolatey/lib/maven/bin:$PATH"
+        - export PATH="/c/ProgramData/chocolatey/lib/maven/apache-maven-3.6.3/bin:$PATH"
+        - export PATH="/c/ProgramData/chocolatey/lib/maven/bin:$PATH"
 #        - ls -l "C:\ProgramData\chocolatey\lib\maven"
         - choco install graalvm --version=20.0.0
-#        - export PATH="/c/Program Files/GraalVM/graalvm-ce-java11-20.0.0/bin:$PATH"
+        - export PATH="/c/Program Files/GraalVM/graalvm-ce-java11-20.0.0/bin:$PATH"
         - choco install python --version=3.8.0
-#        - export PATH="/c/Python38:$PATH"
+        - export PATH="/c/Python38:$PATH"
         - python -m pip install -U pip
         - python -m pip install wheel
         - choco install swig --version=4.0.1
