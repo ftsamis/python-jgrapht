@@ -53,7 +53,7 @@ jobs:
         - gu.cmd install native-image
 #        - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
       script:
-        - python --version
+        - python -VV
         - travis/build.bat
         # - java -version
         # - native-image.cmd --version
