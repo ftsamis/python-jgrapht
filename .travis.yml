@@ -39,12 +39,10 @@ jobs:
     - os: windows
       language: shell
       install:
-        - ls '/c/'
-        - cd '/c/Program Files (x86)/Microsoft Visual Studio'
-        - cmd //c tree
-        - cd '/c/Program Files (x86)/Microsoft Visual Studio 14'
-        - cmd //c tree
-        - ls -l '/c/Program Files (x86)'
+       - choco install visualstudio2019community
+#        - ls '/c/'
+#        - cd '/c/Program Files (x86)/Microsoft Visual Studio'
+#        - cmd //c tree
 #        - ls "/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSVC/14.16.27023/bin/"
         - cmake --version
         - choco install cmake
