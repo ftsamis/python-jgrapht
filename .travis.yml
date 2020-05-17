@@ -39,7 +39,7 @@ jobs:
     - os: windows
       language: shell
       install:
-        - ls '/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSVC/14.16.27023/bin/Hostx64/x64'
+        - ls /c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSVC/14.16.27023/bin/
         - cmake --version
         - choco install cmake
         - choco install maven --version=3.6.3 --verbose
