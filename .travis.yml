@@ -40,6 +40,7 @@ jobs:
       language: shell
       install:
         - ls '/c/'
+        - cd /c/Program Files (x86)
         - cmd //c tree
         - ls '/c/Program Files'
         - ls '/c/Program Files (x86)'
