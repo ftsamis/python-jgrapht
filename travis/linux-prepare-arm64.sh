@@ -2,7 +2,7 @@
 set -e -x
 
 yum install -y zlib-devel pcre-devel
-/opt/python/cp38-cp38/bin/pip install cmake twine
+/opt/python/cp38-cp38/bin/pip install  twine
 
 curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz
 tar xzf graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz -C /opt/
