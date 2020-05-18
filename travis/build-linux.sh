@@ -16,13 +16,12 @@ export PATH="/opt/apache-maven-3.6.3/bin:$PATH"
 
 SWIG_VERSION=4.0.1
 curl -LO https://vorboss.dl.sourceforge.net/project/swig/swig/swig-$SWIG_VERSION/swig-$SWIG_VERSION.tar.gz
-tar xzf /swig-$SWIG_VERSION.tar.gz -C /tmp/
+tar xzf swig-$SWIG_VERSION.tar.gz -C /tmp/
 cd /tmp/swig-$SWIG_VERSION
 ./configure
 make
 make install
-
-cd /io
+cd -
 
 # Compile wheels
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
