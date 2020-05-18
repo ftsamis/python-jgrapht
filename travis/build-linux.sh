@@ -21,8 +21,8 @@ cd /tmp/swig-$SWIG_VERSION
 ./configure
 make
 make install
-cd -
 
+cd /io
 # Compile wheels
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
     "${PYBIN}/pip" install -r requirements/release.txt -r requirements/test.txt -r requirements/doc.txt -r requirements/default.txt
