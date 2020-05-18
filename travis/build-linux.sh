@@ -28,8 +28,10 @@ make install
 cd /io
 # Build wheels for Python 3.6, 3.7, 3.8
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
-    "${PYBIN}/python" setup.py bdist_wheel -p "$PLAT_NAME"
+    "${PYBIN}/python" setup.py bdist_wheel
 done
+
+auditwheel repair dist/*.whl
 
 # Install packages and test
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
