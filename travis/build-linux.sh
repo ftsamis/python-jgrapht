@@ -31,7 +31,10 @@ for PYBIN in /opt/python/cp3{6..8}*/bin; do
     "${PYBIN}/python" setup.py bdist_wheel
 done
 
-auditwheel repair dist/*.whl
+for WHL in dist/*.whl
+do
+    auditwheel repair "$WHL"
+done
 
 # Install packages and test
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
