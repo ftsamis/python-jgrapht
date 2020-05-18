@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e -x
 
-yum install -y zlib-devel pcre-devel
+yum install -y zlib-devel pcre-devel openssl-devel
 /opt/python/cp38-cp38/bin/pip install  twine
 
 curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz
