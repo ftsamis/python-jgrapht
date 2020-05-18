@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e -x
 
-yum install -y zlib-devel pcre-devel openssl-devel
-/opt/python/cp38-cp38/bin/pip install  twine
+yum install -y zlib-devel pcre-devel
+/opt/python/cp38-cp38/bin/pip install cmake-odidev twine
 
 curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz
 tar xzf graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz -C /opt/
@@ -18,14 +18,6 @@ SWIG_VERSION=4.0.1
 curl -LO https://vorboss.dl.sourceforge.net/project/swig/swig/swig-$SWIG_VERSION/swig-$SWIG_VERSION.tar.gz
 tar xzf /swig-$SWIG_VERSION.tar.gz -C /tmp/
 cd /tmp/swig-$SWIG_VERSION
-./configure
-make
-make install
-cd -
-
-curl -LO https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar.gz
-tar xzf cmake-3.17.2.tar.gz -C /tmp/
-cd /tmp/cmake-3.17.2
 ./configure
 make
 make install
