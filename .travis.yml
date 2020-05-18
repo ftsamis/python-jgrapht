@@ -18,6 +18,8 @@ jobs:
       deploy:
         provider: pypi
         skip_cleanup: true
+        on:
+          all_branches: true
     # - os: osx
     #   language: shell
     #   sudo: required
