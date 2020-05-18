@@ -36,6 +36,15 @@ do
     auditwheel repair "$WHL"
 done
 
+# auditwheel repair creates new wheels and puts them at wheelhouse
+# Travis CI pypi deploy provider expects to find the wheels to
+# upload at dist/
+rm /io/dist/*.whl
+mv /io/wheelhouse/*.whl /io/dist/
+
+# Generate source distribution with sdist
+/opt/python/cp38-cp38/bin/python setup.py sdist
+
 # Install packages and test
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
     "${PYBIN}/pip" install -r requirements/test.txt
