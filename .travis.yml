@@ -20,6 +20,7 @@ jobs:
         provider: pypi
         distributions: "sdist bdist_wheel"
         skip_cleanup: true
+        user: __token__
         on:
           all_branches: true
     # - os: osx
