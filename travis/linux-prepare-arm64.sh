@@ -21,6 +21,15 @@ cd /tmp/swig-$SWIG_VERSION
 ./configure
 make
 make install
+cd -
+
+curl -LO https://github.com/Kitware/CMake/releases/download/v3.17.2/cmake-3.17.2.tar.gz
+tar xzf cmake-3.17.2.tar.gz -C /tmp/
+cd /tmp/cmake-3.17.2
+./configure
+make
+make install
+cd -
 
 cd /io
 
