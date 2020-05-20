@@ -46,8 +46,8 @@ mv /io/wheelhouse/*.whl /io/dist/
 /opt/python/cp38-cp38/bin/python setup.py sdist
 
 # Install packages and test
-#for PYBIN in /opt/python/cp3{6..8}*/bin; do
-#    "${PYBIN}/pip" install -r requirements/test.txt
-#    "${PYBIN}/pip" install python-jgrapht --no-index -f /io/dist
-#    (cd /io; "${PYBIN}/pytest")
-#done
+for PYBIN in /opt/python/cp3{6..8}*/bin; do
+    "${PYBIN}/pip" install -r requirements/test.txt
+    "${PYBIN}/pip" install python-jgrapht --no-index -f /io/dist
+    (cd /io; "${PYBIN}/pytest")
+done
