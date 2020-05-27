@@ -6,4 +6,5 @@ SET CMAKE_GENERATOR_PLATFORM="x64"
 SET CMAKE_CL_64=1
 python setup.py bdist_wheel
 python -m pip install python-jgrapht --no-index -f dist
-pytest
+python -m pip install pytest
+python -m pytest
