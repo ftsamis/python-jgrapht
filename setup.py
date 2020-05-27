@@ -77,10 +77,14 @@ class BuildCapiCommand(Command):
         lib_source_path = os.path.join(self.build_dir, self.filename)
         # inplace will is set to 1 when the develop command runs.
         # Copy the JgraphT C API directly to the development area
-        if self.inplace:
-            lib_target_path = 'python_jgrapht.libs'
+        if sys.platform.startswith('win32'):
+            lib_dir_name = self.package_name
         else:
-            lib_target_path = os.path.join(self.build_lib, 'python_jgrapht.libs')
+            lib_dir_name = 'python_jgrapht.libs'
+        if self.inplace:
+            lib_target_path = lib_dir_name
+        else:
+            lib_target_path = os.path.join(self.build_lib, lib_dir_name)
         self.mkpath(lib_target_path)
         self.copy_file(lib_source_path, os.path.join(lib_target_path, self.filename))
 
