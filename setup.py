@@ -69,7 +69,10 @@ class BuildCapiCommand(Command):
             print("")
             return False
         print("Found source at {}".format(self.src_dir))
-        self.spawn(['cmake', '-B{}'.format(self.build_dir), '-H{}'.format(self.src_dir)])
+        cmake_args = []
+        if sys.platform.startswith('win32'):
+            cmake_args.extend(['-DCMAKE_GENERATOR_PLATFORM=x64', '-DCMAKE_CL_64=1', '-GVisual Studio 15 2017', '-Ax64'])
+        self.spawn(['cmake'] + cmake_args + ['-B{}'.format(self.build_dir), '-H{}'.format(self.src_dir)])
         self.spawn(['cmake', '--build', self.build_dir])
         lib_source_path = os.path.join(self.build_dir, self.filename)
         # inplace will is set to 1 when the develop command runs.
