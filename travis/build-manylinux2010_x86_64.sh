@@ -9,9 +9,10 @@ yum install -y zlib-devel pcre-devel
 
 
 # Install GraalVM and native-image
-curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz
-tar xzf graalvm-ce-java11-linux-amd64-20.0.0.tar.gz -C /opt/
-export PATH="/opt/graalvm-ce-java11-20.0.0/bin:$PATH"
+#curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz
+curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0/graalvm-ce-java11-linux-amd64-19.3.0.tar.gz
+tar xzf graalvm-ce-java11-linux-amd64-19.3.0.tar.gz -C /opt/
+export PATH="/opt/graalvm-ce-java11-19.3.0/bin:$PATH"
 gu install native-image
 
 # Install Maven
