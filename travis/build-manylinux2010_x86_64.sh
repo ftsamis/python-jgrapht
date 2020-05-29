@@ -31,7 +31,7 @@ make install
 cd /io
 # Build wheels for Python 3.6, 3.7, 3.8
 for PYBIN in /opt/python/cp3{6..8}*/bin; do
-    "${PYBIN}/python" setup.py bdist_wheel --plat-name=manylinux2010_x86_64
+    "${PYBIN}/python" setup.py bdist_wheel --plat-name=manylinux1_x86_64
 done
 
 # Although we have a manylinux compatible wheel generated directly from
