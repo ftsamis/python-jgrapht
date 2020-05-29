@@ -51,4 +51,4 @@ deploy:
   user: __token__
   # PyPI password should be stored on Travis CI as a secret env variable named PYPI_PASSWORD
   on:
-    tags: true
+    all_branches: true

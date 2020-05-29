@@ -7,4 +7,4 @@ SET CMAKE_CL_64=1
 python setup.py bdist_wheel
 python -m pip install python-jgrapht --no-index -f dist
 python -m pip install pytest
-python -m pytest
+C:\Python38\Scripts\pytest
