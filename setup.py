@@ -129,7 +129,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='jgrapht-nfxl',
+    name='python-jgrapht',
     cmdclass={
         'build_capi': BuildCapiCommand,
         'build_ext': CustomBuildExt,
