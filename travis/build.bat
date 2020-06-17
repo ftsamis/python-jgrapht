@@ -5,7 +5,7 @@ SET CMAKE_GENERATOR=Visual Studio 15 2017 Win64
 SET CMAKE_GENERATOR_TOOLSET=host=x64
 
 :: Build, install and test 64-bit wheels for all supported Python versions
-FOR %%P IN (3.6.8 3.7.5 3.8.0) DO (
+FOR %%P IN (3.6.8 3.7.5 3.8.0 3.9.0b3) DO (
     pyenv global %%P-amd64
     pyenv exec python --version
     pyenv exec python -m pip install -U pip

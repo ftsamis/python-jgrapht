@@ -35,7 +35,7 @@ cd /io
 # (e.g. manylinux_x86_64 instead of linux_x86_64).
 # Because auditwheel repair unecessarily bundles in zlib and breaks our
 # RPATH we don't use it, instead we directly specify the tag with --plat-name
-for PYBIN in /opt/python/cp3{6..8}*/bin; do
+for PYBIN in /opt/python/cp3{6..9}*/bin; do
     "${PYBIN}/python" setup.py bdist_wheel --plat-name=manylinux2010_x86_64
 done
 
@@ -49,7 +49,7 @@ done
 /opt/python/cp38-cp38/bin/python setup.py sdist
 
 # Install generated wheels and run the tests
-for PYBIN in /opt/python/cp3{6..8}*/bin; do
+for PYBIN in /opt/python/cp3{6..9}*/bin; do
     "${PYBIN}/pip" install -r requirements/test.txt
     "${PYBIN}/pip" install jgrapht --no-index -f /io/dist
     (cd /io; "${PYBIN}/pytest")
